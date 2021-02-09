@@ -1,111 +1,100 @@
-# VBlog
-![](https://img.shields.io/github/languages/top/github-laziji/VBlog.svg?style=flat)
-![](https://img.shields.io/github/stars/gitHub-laziji/VBlog.svg?style=social)
+# jekyll-rtd-theme
 
-## 目录
-- [简介](#简介)
-- [演示地址](#演示地址)
-- [项目源码](#项目源码)
-- [项目特点](#项目特点)
-- [更新记录](#更新记录)
-- [快速使用](#快速使用)
+![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=develop)
+![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)
 
-## 简介
+Just another documentation theme compatible with GitHub Pages
 
-博客可搭建在 GitHub Pages 上,
-文章数据储存于gist 中, 通过Github API 与数据进行交互, 实现无后台、可动态发布文章的博客系统
+## What it does?
 
-> 最近暂无更新计划
+This theme is inspired by [sphinx-rtd-theme](https://github.com/readthedocs/sphinx_rtd_theme) and refactored with:
 
+- [@primer/css](https://github.com/primer/css)
+- [github-pages](https://github.com/github/pages-gem) ([dependency versions](https://pages.github.com/versions/))
 
-## 演示地址
-[https://github-laziji.github.io][1]
+## Quick start
 
-## 项目源码
-[https://github.com/GitHub-Laziji/vblog][3]
+```yml
+remote_theme: rundocs/jekyll-rtd-theme
+```
 
-## 项目特点
+You can [generate](https://github.com/rundocs/starter-slim/generate) with the same files and folders from [rundocs/starter-slim](https://github.com/rundocs/starter-slim/)
 
-- [x] 基于 GitHub Pages 无需服务器
-- [x] 改进传统 GitHub Pages 不能动态发布的缺陷
-- [x] 包含电脑端和移动端
-- [x] 单页面应用
+## Usage
 
+Documentation that can guide how to create with Github pages, please refer to [rundocs.io](https://rundocs.io) for details
 
-## 更新记录
+## Features
 
-#### 2018.5.19 更新
-- 增加使用帮助页面
-- 修复没有README.md时候出现的BUG
+- Shortcodes (Toasts card, mermaid)
+- Pages Plugins (emoji, gist, avatar, mentions)
+- Auto generate sidebar
+- [Attribute List Definitions](https://kramdown.gettalong.org/syntax.html#attribute-list-definitions) (Primer/css utilities, Font Awesome 4)
+- Service worker (caches)
+- SEO (404, robots.txt, sitemap.xml)
+- Canonical Link (Open Graph, Twitter Card, Schema data)
 
-#### 2018.5.16 更新
-- 显示粉丝数量
-- 增加粉丝详情页面
+## Options
 
-#### 2018.5.15 更新
-- 粉丝页面优化没有粉丝的情况
-- 修改有的图片越界
-- 配置增加是否自动播放音乐
-- 去除默认音乐
+| name          | default value        | description       |
+| ------------- | -------------------- | ----------------- |
+| `title`       | repo name            |                   |
+| `description` | repo description     |                   |
+| `url`         | user domain or cname |                   |
+| `baseurl`     | repo name            |                   |
+| `lang`        | `en`                 |                   |
+| `direction`   | `auto`               | `ltr` or `rtl`    |
+| `highlighter` | `rouge`              | Cannot be changed |
 
-#### 2018.5.13 更新
-- 电脑端增加社交圈, 查看粉丝和关注的用户
+```yml
+# folders sort
+readme_index:
+  with_frontmatter: true
 
-#### 2018.5.11 更新
-- 移动端增加博客, 项目, 个人中心, 移动端和PC端共用API, 页面独立 
-- 修复文章样式奇怪的BUG
+meta:
+  key1: value1
+  key2: value2
+  .
+  .
+  .
 
-#### 2018.5.8 更新
-- 增加配置选项
-- 改善富文本编辑器
+google:
+  gtag:
+  adsense:
 
-#### 2018.5.6 更新
-- 状态栏增加音乐播放器
+mathjax: # this will prased to json, default: {}
 
-#### 2018.5.5 更新
-- 增加了系统配置, 可以动态修改标题, 描述, 背景等配置 
+mermaid:
+  custom:     # mermaid link
+  initialize: # this will prased to json, default: {}
 
-#### 2018.5.2 更新
-- 增加博客和项目列表的分页 
-- 增加分享链接 
-- 改进Token绑定验证 
-- 修改代码结构 
+scss:   # also _includes/extra/styles.scss
+script: # also _includes/extra/script.js
 
-#### 2018.4.30 更新
-- 添加了从github获取个人开源项目的功能,显示信息更加全面,显示开源项目列表
-- Readme 从github动态获取
+translate:
+  # shortcodes
+  danger:
+  note:
+  tip:
+  warning:
+  # 404
+  not_found:
+  # copyright
+  revision:
+  # search
+  searching:
+  search:
+  search_docs:
+  search_results:
+  search_results_found: # the "#" in this translate will replaced with results size!
+  search_results_not_found:
 
-#### 2018.4.29 更新
-- 增加个人信息的状态栏
-- 修复发图片博文的BUG 
+plugins:
+  - jemoji
+  - jekyll-avatar
+  - jekyll-mentions
+```
 
+## The license
 
-
-## 快速使用
-搭建博客只需2步
-- 点击github头像旁边的 "+" 号 选择 ```Import repository ```克隆地址填 ```https://github.com/GitHub-Laziji/GitHub-Laziji.github.io ```项目名填 ```你的用户名.github.io ```
-- 克隆完成后 修改文件 ```/static/configuration.json``` 中的 ```githubUsername``` 为自己的github用户名
-
-
-类似演示地址其中 GitHub-Laziji 为我的用户名
-
-
-现在 ```https://你的用户名.github.io``` 就是你的个人博客了,例如[https://github-laziji.github.io][1]
-
-
-
-#### 获取Token
-
-在 ```github > settings > Developer settings > Personal access tokens```  勾选```gist``` 和 ```repo```权限 获取```Token```
-
-
-------
-
-
-作者 *Laziji*
-
-
-
-  [1]: https://github-laziji.github.io
-  [2]: https://github.com/GitHub-Laziji/GitHub-Laziji.github.io
-  [3]: https://github.com/GitHub-Laziji/vblog
+The theme is available as open source under the terms of the MIT License
