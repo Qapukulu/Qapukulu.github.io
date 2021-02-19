@@ -9,5 +9,4 @@ sort: 1
 
 {% include list.liquid all=true %}
 ```
-
-{% include list.liquid all=true %}
+{% raw %}{% include list.liquid all=true %}{% endraw %}
